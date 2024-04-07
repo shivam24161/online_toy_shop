@@ -1,0 +1,12 @@
+body{
+  /* background-image: linear-gradient(to right, rgb(252, 115, 115), rgb(255, 255, 154)); */
+   /* background-image: linear-gradient(to left, rgb(194, 64, 255), rgb(80, 209, 248)); */
+  /* background-image: linear-gradient(to right, rgb(81, 223, 233), rgb(81, 252, 124)); */
+   background-image: linear-gradient(to left, rgb(137, 247, 86,0.5), rgb(230, 130, 255,0.5));
+  /* background-image: linear-gradient(to right, rgb(230, 131, 255), rgb(172, 34, 53));  */
+  opacity: 0.9;
+}
+html{
+  scroll-behavior: smooth;
+}
+

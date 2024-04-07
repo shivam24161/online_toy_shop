@@ -1,0 +1,47 @@
+.carousel{
+    width: 100vw;
+}
+.carousel1{
+    width: 20vw;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.category_subheading{
+    cursor: pointer;
+}
+.category_subheading{
+    text-decoration: none;
+}
+.offer_link{
+    text-decoration: none;
+}
+#offer_btn{
+    color:#642B96;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 700px) {
+    .category_div1{
+        font-size: 3vw;
+    }
+  }
+  @media screen and (max-width: 700px) {
+    .category_heading{
+        font-size: 5vw;
+    }
+  }
+  @media screen and (max-width: 700px) {
+    .offer_heading1{
+        font-size: 5vw;
+    }
+  }  
+  @media screen and (max-width: 600px) {
+    .offer_heading1{
+        font-size: 2vw;
+    }
+  }
+  @media screen and (max-width: 800px) {
+    .offer_heading1{
+        font-size: 2vw;
+    }
+  }

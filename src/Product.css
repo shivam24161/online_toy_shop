@@ -1,0 +1,233 @@
+.product_div{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 1vw;
+    width:142vw;
+}
+.product_image{
+    width: 20vw;
+}
+
+.product_name{
+    font-size: 1.5vw;
+}
+.product_price{
+    font-size: 1.5vw;
+    font-weight: bold;
+}
+.product_card{
+    border: 1px solid rgb(200,200,200);
+    background-color: aliceblue;
+    border-radius: 8px;
+    padding: 2vw;
+    margin-bottom: 2vw;
+}
+#add_to_basket{
+    font-size: 1.5vw;
+    background-color: rgba(165, 42, 42, 0.868);
+    color: aliceblue;
+}
+
+#add_to_basket:hover{
+    font-size: 1.7vw;
+}
+.product_heading{
+    color:#6a2dd2f7;
+    text-align: center;
+    text-decoration:underline;
+    text-shadow: 0 0 3px #FF0000;
+}
+.main_product_div{
+    display: flex;
+}
+.category_div{
+    width: 35vw;
+   margin-left: 2vw;
+}
+.filter_price{
+    font-weight: bold;
+    text-decoration: underline;
+    color: brown;
+    font-size: 2vw;
+}
+.filter_category{
+    font-weight: bold;
+    text-decoration: underline;
+    color: brown;
+    font-size: 2vw;
+}
+.sortBy{
+    display: flex;
+    justify-content: flex-start;
+    padding: 1vh;
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+    margin-left: 13vw;
+    margin-right: 1vw;
+    padding-top: 1vw;
+    padding-bottom: 1vw;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    font-weight: bold;
+    color: brown;   
+}
+.sort_span1{
+    margin-right: 5vw;
+    margin-left: 10vw;
+}
+
+.product_found{
+    font-weight: bold;
+    font-size: 2vw;
+    color:#6a2dd2f7;
+}
+@media screen and (min-width: 1500px) {
+    #demo-simple-select-standard-label{
+      font-size: 2vh;
+    }
+  }
+  @media screen and (min-width: 1600px) {
+    #demo-simple-select-standard-label{
+      font-size: 2vh;
+    }
+  }
+
+  @media screen and (max-width: 700px) {
+    .sortBy{
+      flex-wrap: wrap;
+    }
+  }
+  @media screen and (max-width: 800px) {
+    .sortBy{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      padding: 1vh;
+      margin-top: 3vh;
+      margin-bottom: 2vh;
+      margin-left: 2vw;
+      margin-right: 2vw;
+      padding-top: 2vh;
+      padding-bottom: 3vh;
+      position: relative;
+      top: 0;
+    }
+  }
+@media screen and (min-width: 1200px) {
+    .category_div{
+        width: 22vw;
+        font-weight: bold;
+    }
+  }
+  /* @media screen and (min-width: 1200px) {
+    .category_div{
+        width: 22vw;
+        font-weight: bold;
+    }
+  }
+  @media screen and (min-width: 1800px) {
+    .category_div{
+        width: 18vw;
+        font-weight: bold;
+    }
+  }
+  @media screen and (min-width: 2200px) {
+    .category_div{
+        width: 12vw;
+        font-weight: bold;
+    }
+  }
+  @media screen and (min-width: 2200px) {
+    .product_found{
+       font-size: 1.5vw;
+    }
+    .filter_category{
+      font-size: 1.5vw;
+    }
+  } */
+  /* @media screen and (min-width: 2500px) {
+    .category_div{
+      width: 9vw;
+      font-weight: bold;
+  }
+    .product_found{
+       font-size: 1vw;
+    }
+    .filter_category{
+      font-size: 1vw;
+    }
+  } */
+
+@media screen and (min-width: 1500px) {
+    .sortBy{
+        justify-content: space-evenly;
+        color: brown;
+        padding: 1vw;
+        font-weight: bold;
+        display: flex;
+    }
+  }
+@media screen and (min-width: 1500px) {
+    #building{
+        font-size: 2vw;
+    }
+  }
+@media screen and (max-width: 600px) {
+    .category_div{
+        max-width: 40vw;
+    }
+  }
+  @media screen and (max-width: 400px) {
+    .category_div{
+        max-width: 40vw;
+    }
+  }
+  @media screen and (max-width: 600px) {
+    .filter_category{
+        font-size: 4vw;
+    }
+  }
+  @media screen and (max-width: 600px) {
+    #add_to_basket{
+        font-size: 2vw;
+        background-color: rgba(165, 42, 42, 0.868);
+        color: aliceblue;
+        font-weight: bold;
+    }
+    .product_name{
+        font-size: 2vw;
+        font-weight: bold;
+    }
+    .product_price{
+        font-size: 2vw;
+        font-weight: bold;
+    }
+  }
+  .span_discount{
+    margin-left: 2vw;
+    text-decoration: line-through;
+  }
+
+  .circle {
+    position: absolute;
+    display:inline-table;
+    /* vertical-align: middle; */
+    width: 5vw;
+    height: 5vw;
+    background-color: #D63093;
+    color: white;
+    border-radius: 50%;
+    font-size: 1.5vw;
+  }
+  
+  .circle__content {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+  }
+  .star_rating{
+    display: flex;
+    font-size: 0.8vw;
+  }

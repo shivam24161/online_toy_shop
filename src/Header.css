@@ -1,0 +1,39 @@
+#link1{
+    text-decoration: none;
+    font-weight: bold;
+}
+#icon_link{
+    text-decoration: none;
+    color: aliceblue;
+}
+.login_name{
+    color:#8EBA50;
+    font-weight: bold;
+    font-size: 1.5vw;
+    padding-right: 1vw;
+}
+@media screen and (min-width: 1500px) {
+    #appBar{
+        padding: 1vw;
+    }
+  }
+/* Scroll to top button */
+#myBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    font-size: 1vw;
+    border: none;
+    outline: none;
+    background-color: red;
+    color: white;
+    cursor: pointer;
+    padding: 1vw;
+    border-radius: 4px;
+  }
+  
+  #myBtn:hover {
+    background-color: #555;
+  }

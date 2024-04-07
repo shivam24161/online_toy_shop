@@ -1,0 +1,32 @@
+#chk_btn{
+    background-color: #E72B61;
+    float: right;
+    margin: 1.5vw;
+    font-size: 1.5vw;
+}
+.span_total{
+    float: right;
+    margin: 2vw;
+    font-size: 2vw;
+    font-weight: bold;
+}
+.cart_heading{
+    color:#E63C6D;
+    text-align: center;
+}
+@media screen and (max-width: 700px) {
+    .chk_btn{
+        font-size: 10vw;
+    }
+  }
+  @media screen and (max-width: 700px) {
+    .span_total{
+        font-size: 4vw;
+    }
+  }
+  #link_continue{
+    text-decoration: none;
+  }
+  .span{
+    font-weight: lighter;
+}
