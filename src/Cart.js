@@ -3,9 +3,7 @@ import { userContext } from "./Mycontext";
 import * as React from "react";
 import "./Cart.css";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import { Alert, Button } from "@mui/material";
 import Typography from "@mui/material/Typography";
-import CloseIcon from "@mui/icons-material/Close";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
@@ -14,11 +12,10 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import Modal from "@mui/material/Modal";
-import Slide from "@mui/material/Slide";
 import DeleteIcon from "@mui/icons-material/Delete";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
-import TextField from "@mui/material/TextField";
+import { Button } from "@mui/material";
 import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
 import DialogTitle from "@mui/material/DialogTitle";
@@ -38,7 +35,7 @@ const style = {
   transform: "translate(-50%, -50%)",
   width: 400,
   bgcolor: "#A73E3E",
-  color:"white",
+  color: "white",
   boxShadow: 24,
   p: 4,
 };
@@ -65,7 +62,6 @@ const Cart = () => {
     } else {
       setopenCheck(true);
     }
-   
   };
 
   const openempty = Boolean(anchorEl1);
@@ -83,25 +79,25 @@ const Cart = () => {
   // Total Amount total,settotal
   React.useEffect(() => {
     var temp = 0;
-    obj.cartitems.map((data) => (temp += parseInt(data.total_price)));
+    obj.cartitems.map((data) => {
+      temp += parseInt(data.total_price);
+      return null;
+    });
     settotalAmount(temp);
   }, [obj.cartitems]);
 
   // Checkout
   const checkout = () => {
-    let address=document.getElementById("user_address").value;
-    if(address === "")
-    {
+    let address = document.getElementById("user_address").value;
+    if (address === "") {
       setopenerror(true);
       seterrortext("Please provide address");
-    }
-    else{
+    } else {
       setopenerror(true);
       seterrortext("Thank you , your order has been placed!");
       setopenCheck(false);
       obj.setcartitems([]);
     }
-  
   };
   // Delete Items  cartitems,setcartitems,userdetails
   const deleteItems = () => {
@@ -113,6 +109,7 @@ const Cart = () => {
         i.total_price = i.quantity * i.price;
         obj.setcartitems([...items]);
       }
+      return null;
     });
     setAnchorEl(null);
   };
@@ -122,6 +119,7 @@ const Cart = () => {
     obj.cartitems.map((i) => {
       i.quantity = 1;
       obj.setcartitems([]);
+      return null;
     });
   };
 
@@ -135,6 +133,7 @@ const Cart = () => {
           obj.setcartitems([...obj.cartitems]);
         }
       }
+      return null;
     });
   };
 
@@ -146,11 +145,12 @@ const Cart = () => {
         i.total_price = i.quantity * i.price;
         obj.setcartitems([...obj.cartitems]);
       }
+      return null;
     });
   };
   // Delete Confirm
   const handleClickDel = (event) => {
-    console.log(event.target.parentElement)
+    console.log(event.target.parentElement);
     setidd(event.target.parentElement.id);
     setAnchorEl(event.currentTarget);
   };
@@ -172,7 +172,19 @@ const Cart = () => {
             style={{ textAlign: "center", color: "#F89703", fontSize: "4vh" }}
           >
             <i>Your Cart is Empty.. </i>
-            <Link to="/" id="link_continue"><Button variant="contained" sx={{color:"red",backgroundColor:"white",fontWeight:"bold",fontSize:"1.2vw"}}>Continue Shopping</Button></Link>
+            <Link to="/" id="link_continue">
+              <Button
+                variant="contained"
+                sx={{
+                  color: "red",
+                  backgroundColor: "white",
+                  fontWeight: "bold",
+                  fontSize: "1.2vw",
+                }}
+              >
+                Continue Shopping
+              </Button>
+            </Link>
           </h1>
         </>
       ) : (
@@ -190,7 +202,7 @@ const Cart = () => {
                 marginLeft: "5vw",
                 color: "red",
                 fontSize: "2vh",
-                backgroundColor:"white"
+                backgroundColor: "white",
               }}
             >
               <ClearAllIcon />
@@ -253,7 +265,6 @@ const Cart = () => {
                 {obj.cartitems.map((row, index) => {
                   var a = row.unique_id;
                   return (
-                    <>
                       <TableRow
                         key={row.name}
                         sx={{
@@ -266,7 +277,7 @@ const Cart = () => {
                         <TableCell
                           component="th"
                           scope="row"
-                          sx={{ fontSize: "2vh" ,fontWeight:"bold"}}
+                          sx={{ fontSize: "2vh", fontWeight: "bold" }}
                         >
                           {index + 1}
                         </TableCell>
@@ -277,13 +288,13 @@ const Cart = () => {
                             style={{ width: "10vh" }}
                           />
                         </TableCell>
-                        <TableCell sx={{ fontSize: "2vh",fontWeight:"bold" }}>
+                        <TableCell sx={{ fontSize: "2vh", fontWeight: "bold" }}>
                           {row.name}
                         </TableCell>
-                        <TableCell sx={{ fontSize: "2vh" ,fontWeight:"bold"}}>
+                        <TableCell sx={{ fontSize: "2vh", fontWeight: "bold" }}>
                           &#8377; {row.price}
                         </TableCell>
-                        <TableCell sx={{ fontSize: "2vh",fontWeight:"bold" }}>
+                        <TableCell sx={{ fontSize: "2vh", fontWeight: "bold" }}>
                           <Button
                             onClick={() => decreaseQuantity(row.unique_id)}
                           >
@@ -296,7 +307,7 @@ const Cart = () => {
                             <AddIcon sx={{ color: "#E63C6D" }} />
                           </Button>
                         </TableCell>
-                        <TableCell sx={{ fontSize: "2vh",fontWeight:"bold" }}>
+                        <TableCell sx={{ fontSize: "2vh", fontWeight: "bold" }}>
                           &#8377; {row.total_price}
                         </TableCell>
                         <TableCell>
@@ -305,7 +316,7 @@ const Cart = () => {
                             onClick={handleClickDel}
                             id={a}
                           >
-                            <DeleteIcon id={a} sx={{color: "#E63C6D"}}/>
+                            <DeleteIcon id={a} sx={{ color: "#E63C6D" }} />
                           </Button>
                           {/* Delete single items */}
                           <Popover
@@ -331,14 +342,17 @@ const Cart = () => {
                           </Popover>
                         </TableCell>
                       </TableRow>
-                    </>
                   );
                 })}
               </TableBody>
             </Table>
           </TableContainer>
-          <p style={{marginRight:"15vw"}}>
-            <Button variant="contained" id="chk_btn" onClick={handleClickOpenCheck}>
+          <p style={{ marginRight: "15vw" }}>
+            <Button
+              variant="contained"
+              id="chk_btn"
+              onClick={handleClickOpenCheck}
+            >
               Proceed to Checkout
             </Button>
             <span className="span_total">Total: &#8377;{totalAmount}</span>
@@ -369,9 +383,15 @@ const Cart = () => {
             Enter Your Following Details:
           </Typography>
           <div>
-            <h3>Name : <span className="span">{obj.loginname}</span></h3>
-            <h3>Email : <span className="span">{obj.email1}</span></h3>
-            <h3>Mobile Number: <span className="span">{obj.mobile1}</span></h3>
+            <h3>
+              Name : <span className="span">{obj.loginname}</span>
+            </h3>
+            <h3>
+              Email : <span className="span">{obj.email1}</span>
+            </h3>
+            <h3>
+              Mobile Number: <span className="span">{obj.mobile1}</span>
+            </h3>
             <TextareaAutosize
               id="user_address"
               aria-label="address"
